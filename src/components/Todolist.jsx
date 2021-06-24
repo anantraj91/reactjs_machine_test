@@ -19,7 +19,7 @@ const Todolist = () => {
     const DeleteItem = (id) => {
 
       const updatedItems = items.filter((element, ind) => {
-                 return ind!==ind;
+                 return ind!==id;
 
       });
       setItems(updatedItems);
