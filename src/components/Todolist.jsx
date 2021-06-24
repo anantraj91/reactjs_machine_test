@@ -16,6 +16,16 @@ const Todolist = () => {
         }
     }
 
+    const DeleteItem = (id) => {
+
+      const updatedItems = items.filter((element, ind) => {
+                 return ind!==ind;
+
+      });
+      setItems(updatedItems);
+
+    }
+
     return (
         <>
             <div className='container-fluid mt-5'>
@@ -44,10 +54,11 @@ const Todolist = () => {
                                 {  items.map((data,index) =>{
                                    return(
                                 
-                                <tr>
+                                <tr key={index}>
                                     <th scope="row">{index+1}</th>
                                     <td>{data}</td>
-
+                                    <td><button type="button" class="btn btn-danger" onClick={()=> DeleteItem(index)}>Delete</button></td>
+                                     
                                 </tr>
                                 )
                             })
